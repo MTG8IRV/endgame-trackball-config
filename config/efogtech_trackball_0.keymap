@@ -37,16 +37,16 @@
         bindings = <&kp LC(LS(V))>;
     };
 
-    /* Flick Left -> Previous Workspace (Ctrl + Super + Left) */
+    /* Flick Left -> Previous Workspace (Windows + Ctrl + Left) */
     gesture_prev_workspace {
         pattern = <GESTURE_LEFT>;
-        bindings = <&kp LC(LG(LEFT))>;
+        bindings = <&kp LG(LC(LEFT))>;
     };
 
-    /* Flick Right -> Next Workspace (Ctrl + Super + Right) */
+    /* Flick Right -> Next Workspace (Windows + Ctrl + Right) */
     gesture_next_workspace {
         pattern = <GESTURE_RIGHT>;
-        bindings = <&kp LC(LG(RIGHT))>;
+        bindings = <&kp LG(LC(RIGHT))>;
     };
 
     /* Fluid South-East flick (Down then Right) -> Play/Pause */
