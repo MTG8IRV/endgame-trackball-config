@@ -21,7 +21,7 @@
 /* Gesture Configuration */
 &zip_mouse_gesture {
     stroke-size = <180>;
-    idle-timeout-ms = <100>;
+    idle-timeout-ms = <150>;
     suppress-movement;
     enable-eager-mode;
 
@@ -31,22 +31,28 @@
         bindings = <&kp LC(C)>;
     };
 
-    /* Flick North -> Paste */
+    /* Flick North -> Paste (Ctrl + Shift + V) */
     gesture_paste {
         pattern = <GESTURE_UP>;
         bindings = <&kp LC(LS(V))>;
     };
 
-    /* Flick Left -> Previous Workspace */
+    /* Flick Left -> Previous Workspace (Ctrl + Super + Left) */
     gesture_prev_workspace {
         pattern = <GESTURE_LEFT>;
         bindings = <&kp LC(LG(LEFT))>;
     };
 
-    /* Flick Right -> Next Workspace */
+    /* Flick Right -> Next Workspace (Ctrl + Super + Right) */
     gesture_next_workspace {
         pattern = <GESTURE_RIGHT>;
         bindings = <&kp LC(LG(RIGHT))>;
+    };
+
+    /* Fluid South-East flick (Down then Right) -> Play/Pause */
+    gesture_play_pause {
+        pattern = <GESTURE_DOWN GESTURE_RIGHT>;
+        bindings = <&kp C_PP>;
     };
 };
 
@@ -58,15 +64,7 @@
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            bindings = <&mouse_gesture>, <&back_tap>;
-        };
-
-        /* Single tap = Browser Back, Double tap = Play/Pause */
-        back_tap: back_tap {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mkp MB4>, <&kp C_PP>;
+            bindings = <&mouse_gesture>, <&mkp>;
         };
     };
 
@@ -81,7 +79,7 @@
                 &ltmkp LAYER_SNIPE ENTER  &ltmkp LAYER_SCROLL ESC
                 &mkp MCLK                 &cdch LAYER_SCROLL 0
                 &mkp LCLK                 &mkp RCLK
-                &back_gesture 0 0         &ltm LAYER_DEVICE MB5
+                &back_gesture 0 MB4       &ltm LAYER_DEVICE MB5
 
                 // rotary encoders
                 &kp C_VOL_UP              &kp LC(TAB)
