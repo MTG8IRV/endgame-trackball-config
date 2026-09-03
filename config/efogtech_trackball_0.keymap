@@ -27,13 +27,13 @@
 
     /* Flick South -> Copy */
     gesture_copy {
-        pattern = <GESTURE_D>;
+        pattern = <GESTURE_DOWN>;
         bindings = <&kp LC(C)>;
     };
 
     /* Flick North -> Paste (Ctrl + Shift + V) */
     gesture_paste {
-        pattern = <GESTURE_U>;
+        pattern = <GESTURE_UP>;
         bindings = <&kp LC(LS(V))>;
     };
 };
