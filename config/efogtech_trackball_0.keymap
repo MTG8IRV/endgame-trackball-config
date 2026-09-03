@@ -20,39 +20,33 @@
 
 /* Gesture Configuration */
 &zip_mouse_gesture {
-    stroke-size = <180>;
-    idle-timeout-ms = <150>;
+    stroke-size = <110>;
+    idle-timeout-ms = <100>;
     suppress-movement;
     enable-eager-mode;
 
-    /* Flick South -> Copy */
+    /* South -> Copy (Ctrl + C) */
     gesture_copy {
         pattern = <GESTURE_DOWN>;
         bindings = <&kp LC(C)>;
     };
 
-    /* Flick North -> Paste (Ctrl + Shift + V) */
+    /* North -> Paste (Ctrl + Shift + V) */
     gesture_paste {
         pattern = <GESTURE_UP>;
         bindings = <&kp LC(LS(V))>;
     };
 
-    /* Flick Left -> Previous Workspace (Windows + Ctrl + Left) */
+    /* Left -> Previous Workspace (Ctrl + Alt + Left) */
     gesture_prev_workspace {
         pattern = <GESTURE_LEFT>;
-        bindings = <&kp LG(LC(LEFT))>;
+        bindings = <&kp LC(LA(LEFT))>;
     };
 
-    /* Flick Right -> Next Workspace (Windows + Ctrl + Right) */
+    /* Right -> Next Workspace (Ctrl + Alt + Right) */
     gesture_next_workspace {
         pattern = <GESTURE_RIGHT>;
-        bindings = <&kp LG(LC(RIGHT))>;
-    };
-
-    /* Fluid South-East flick (Down then Right) -> Play/Pause */
-    gesture_play_pause {
-        pattern = <GESTURE_DOWN GESTURE_RIGHT>;
-        bindings = <&kp C_PP>;
+        bindings = <&kp LC(LA(RIGHT))>;
     };
 };
 
@@ -159,9 +153,10 @@
     };
 
     trackball {
-        input-processors = <&zip_mouse_gesture>,
+        input-processors = <&zip_rotate_pointer>,
+                           <&zip_mouse_gesture>,
                            <&zip_bistable_twist_scaler>,
-                           <&zip_pointer_accel>, <&zip_scroll_accel>, <&zip_rotate_pointer>,
+                           <&zip_pointer_accel>, <&zip_scroll_accel>,
                            <&esb_ip>, <&zip_ble_report_rate_limit>;
 
         scroll {
