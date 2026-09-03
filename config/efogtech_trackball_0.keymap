@@ -20,10 +20,9 @@
 
 /* Gesture Configuration */
 &zip_mouse_gesture {
-    stroke-size = <110>;
-    idle-timeout-ms = <100>;
+    stroke-size = <120>;
+    idle-timeout-ms = <150>;
     suppress-movement;
-    enable-eager-mode;
 
     /* South -> Copy (Ctrl + C) */
     gesture_copy {
@@ -47,6 +46,12 @@
     gesture_next_workspace {
         pattern = <GESTURE_RIGHT>;
         bindings = <&kp LC(LA(RIGHT))>;
+    };
+
+    /* South-East (Down then Right) -> Play/Pause */
+    gesture_play_pause {
+        pattern = <GESTURE_DOWN GESTURE_RIGHT>;
+        bindings = <&kp C_PP>;
     };
 };
 
