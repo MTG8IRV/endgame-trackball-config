@@ -36,16 +36,16 @@
         bindings = <&kp LC(LS(V))>;
     };
 
-    /* Left -> Previous Workspace (Ctrl + Alt + Left) */
+    /* Left -> Previous Workspace (Ctrl + Meta + Left) */
     gesture_prev_workspace {
         pattern = <GESTURE_LEFT>;
-        bindings = <&kp LC(LA(LEFT))>;
+        bindings = <&kp LC(LG(LEFT))>;
     };
 
-    /* Right -> Next Workspace (Ctrl + Alt + Right) */
+    /* Right -> Next Workspace (Ctrl + Meta + Right) */
     gesture_next_workspace {
         pattern = <GESTURE_RIGHT>;
-        bindings = <&kp LC(LA(RIGHT))>;
+        bindings = <&kp LC(LG(RIGHT))>;
     };
 
     /* South-East (Down then Right) -> Play/Pause */
@@ -57,9 +57,10 @@
 
 / {
     behaviors {
+        /* Single-parameter hold-tap prevents Marshmallow UI RPC serialization errors */
         back_gesture: back_gesture {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
+            #binding-cells = <1>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
@@ -78,7 +79,7 @@
                 &ltmkp LAYER_SNIPE ENTER  &ltmkp LAYER_SCROLL ESC
                 &mkp MCLK                 &cdch LAYER_SCROLL 0
                 &mkp LCLK                 &mkp RCLK
-                &back_gesture 0 MB4       &ltm LAYER_DEVICE MB5
+                &back_gesture MB4         &ltm LAYER_DEVICE MB5
 
                 // rotary encoders
                 &kp C_VOL_UP              &kp LC(TAB)
