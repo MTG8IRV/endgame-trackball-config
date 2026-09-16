@@ -61,7 +61,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <80>;
+            tapping-term-ms = <10>;
             quick-tap-ms = <0>;
             bindings = <&mouse_gesture>, <&mkp>;
         };
