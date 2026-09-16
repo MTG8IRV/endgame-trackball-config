@@ -21,7 +21,7 @@
 /* Gesture Configuration */
 &zip_mouse_gesture {
     stroke-size = <120>;
-    idle-timeout-ms = <150>;
+    idle-timeout-ms = <50>;
     suppress-movement;
 
     /* South -> Copy (Ctrl + C) */
@@ -59,7 +59,7 @@
     behaviors {
         back_gesture: back_gesture {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
+            #binding-cells = <1>;
             flavor = "hold-preferred";
             tapping-term-ms = <100>;
             quick-tap-ms = <0>;
@@ -78,7 +78,7 @@
                 &ltmkp LAYER_SNIPE ENTER  &ltmkp LAYER_SCROLL ESC
                 &mkp MCLK                 &cdch LAYER_SCROLL 0
                 &mkp LCLK                 &mkp RCLK
-                &back_gesture 0 MB4       &ltm LAYER_DEVICE MB5
+                &back_gesture MB4       &ltm LAYER_DEVICE MB5
 
                 // rotary encoders
                 &kp C_VOL_UP              &kp LC(TAB)
