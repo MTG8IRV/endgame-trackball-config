@@ -59,9 +59,9 @@
     behaviors {
         back_gesture: back_gesture {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <100>;
+            tapping-term-ms = <80>;
             quick-tap-ms = <0>;
             bindings = <&mouse_gesture>, <&mkp>;
         };
@@ -78,7 +78,7 @@
                 &ltmkp LAYER_SNIPE ENTER  &ltmkp LAYER_SCROLL ESC
                 &mkp MCLK                 &cdch LAYER_SCROLL 0
                 &mkp LCLK                 &mkp RCLK
-                &back_gesture MB4       &ltm LAYER_DEVICE MB5
+                &back_gesture 0 MB4       &ltm LAYER_DEVICE MB5
 
                 // rotary encoders
                 &kp C_VOL_UP              &kp LC(TAB)
