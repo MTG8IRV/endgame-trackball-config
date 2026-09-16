@@ -20,7 +20,7 @@
 
 /* Gesture Configuration */
 &zip_mouse_gesture {
-    stroke-size = <120>;
+    stroke-size = <180>;
     idle-timeout-ms = <150>;
     suppress-movement;
 
@@ -61,7 +61,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <120>;
+            tapping-term-ms = <150>;
             quick-tap-ms = <0>;
             bindings = <&mouse_gesture>, <&mkp>;
         };
