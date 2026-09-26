@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: zmk
       remote: efogdev
-      revision: "078ba94b"
+      revision: "50d57079"
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: efogdev
@@ -38,7 +38,7 @@ manifest:
       revision: "b712a64"
     - name: zmk-acceleration-curves
       remote: efogdev
-      revision: "f598fde"
+      revision: "09a49e1"
     - name: zmk-input-processor-rotate-plane
       remote: efogdev
       revision: "86901be"
@@ -50,7 +50,7 @@ manifest:
       revision: "652ae06"
     - name: zmk-ble-shell
       remote: efogdev
-      revision: "d79952b"
+      revision: "3aa9bfa"
     - name: zmk-esb-endpoint
       remote: efogdev
       revision: "89b695a"
